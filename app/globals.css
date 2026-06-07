@@ -252,6 +252,7 @@ footer { background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%); border-t
   .grid-2 { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
   .grid-2 > div { display: flex; flex-direction: column; align-items: center; justify-content: center; }
   .grid-2 ul { align-self: center; text-align: left; }
+  .grid-2 form, .grid-2 .form-group { text-align: left; width: 100%; }
   
   /* Re-adjust Particle Sphere for tablet layout */
   .canvas3d-container { height: 350px; max-width: 420px; margin-top: 1rem; }

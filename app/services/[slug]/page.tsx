@@ -104,7 +104,7 @@ const heroVisuals: Record<string, React.ReactNode> = {
   ),
 
   'mobile-app-development': (
-    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
       {/* Phone mockup */}
       <div style={{ width: 200, background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 32, padding: '1.25rem', boxShadow: '0 20px 60px rgba(14,27,77,0.08)' }}>
         <div style={{ width: 50, height: 5, background: 'var(--border)', borderRadius: 3, margin: '0 auto 1.25rem' }} />

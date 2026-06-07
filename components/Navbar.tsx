@@ -90,24 +90,31 @@ export default function Navbar() {
         .nav-dropdown-icon { font-size: 16px; width: 22px; text-align: center; }
         /* Mobile accordion */
         .mobile-services-toggle {
-          display: none; background: none; border: none;
-          color: var(--text-muted); font-size: 14px;
-          font-weight: 600; cursor: pointer;
-          width: 100%; text-align: left; padding: 0;
+          display: none !important;
         }
         .mobile-sub-menu {
           display: flex; flex-direction: column; gap: 4px;
           padding: 8px 0 4px 16px; border-left: 2px solid var(--border);
           margin-top: 8px;
+          width: 100%;
         }
         .mobile-sub-menu a {
           font-size: 14px !important; color: var(--text-muted) !important;
           padding: 6px 0 !important;
         }
-        .mobile-sub-menu a:hover { color: var(--primary) !important; }
+        .mobile-sub-menu a:hover, .mobile-sub-menu a.active { color: var(--primary) !important; }
         @media (max-width: 1024px) {
           .nav-dropdown { display: none !important; }
-          .mobile-services-toggle { display: flex; align-items: center; justify-content: space-between; }
+          .mobile-services-toggle {
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 6px;
+          }
         }
       `}</style>
 
@@ -123,14 +130,25 @@ export default function Navbar() {
             <li><Link href="/about" className={isActive('/about') ? 'active' : ''}>About</Link></li>
 
             {/* Services with dropdown */}
-            <li className="nav-dropdown-parent">
-              {/* Desktop link */}
-              <Link href="/services" className={`${isActive('/services') ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                Services
-                <svg style={{ width: 14, height: 14, fill: 'currentColor', opacity: 0.6 }} viewBox="0 0 24 24">
-                  <path d="M7 10l5 5 5-5z"/>
-                </svg>
-              </Link>
+            <li className="nav-dropdown-parent" style={{ width: mobileOpen ? '100%' : 'auto' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: '10px' }}>
+                <Link href="/services" className={`${isActive('/services') ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                  Services
+                </Link>
+                {/* Mobile toggle button */}
+                <button 
+                  className="mobile-services-toggle"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setServicesOpen(!servicesOpen);
+                  }}
+                  aria-label="Toggle sub-services"
+                >
+                  <svg style={{ width: 18, height: 18, fill: 'currentColor', transform: servicesOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} viewBox="0 0 24 24">
+                    <path d="M7 10l5 5 5-5z"/>
+                  </svg>
+                </button>
+              </div>
 
               {/* Desktop dropdown */}
               <div className="nav-dropdown">
@@ -141,28 +159,21 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
+
+              {/* Mobile sub menu */}
+              {mobileOpen && servicesOpen && (
+                <div className="mobile-sub-menu">
+                  {subServices.map(s => (
+                    <Link key={s.href} href={s.href} className={pathname === s.href ? 'active' : ''} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <span style={{ fontSize: '16px' }}>{s.icon}</span>
+                      <span>{s.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </li>
 
             <li><Link href="/contact" className={isActive('/contact') ? 'active' : ''}>Contact</Link></li>
-
-            {/* Mobile-only services accordion */}
-            {mobileOpen && (
-              <li style={{ paddingLeft: 0 }}>
-                <button className="mobile-services-toggle" onClick={() => setServicesOpen(!servicesOpen)}>
-                  <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>── All Services</span>
-                  <span>{servicesOpen ? '▲' : '▼'}</span>
-                </button>
-                {servicesOpen && (
-                  <div className="mobile-sub-menu">
-                    {subServices.map(s => (
-                      <Link key={s.href} href={s.href}>
-                        {s.icon} {s.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </li>
-            )}
           </ul>
 
           <div className="nav-right">
