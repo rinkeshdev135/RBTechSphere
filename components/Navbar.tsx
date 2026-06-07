@@ -105,7 +105,7 @@ export default function Navbar() {
           padding: 6px 0 !important;
         }
         .mobile-sub-menu a:hover { color: var(--primary) !important; }
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .nav-dropdown { display: none !important; }
           .mobile-services-toggle { display: flex; align-items: center; justify-content: space-between; }
         }
