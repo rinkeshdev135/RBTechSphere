@@ -131,7 +131,7 @@ export default function Navbar() {
 
             {/* Services with dropdown */}
             <li className="nav-dropdown-parent" style={{ width: mobileOpen ? '100%' : 'auto' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: '10px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', width: '100%', gap: '4px' }}>
                 <Link href="/services" className={`${isActive('/services') ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                   Services
                 </Link>
