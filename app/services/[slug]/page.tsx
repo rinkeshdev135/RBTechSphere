@@ -226,7 +226,7 @@ const heroVisuals: Record<string, React.ReactNode> = {
         <span style={pill('#10B981','rgba(16,185,129,0.1)')}>Live</span>
       </div>
       {/* Module grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem', marginBottom: '1.25rem' }}>
+      <div className="odoo-grid">
         {[
           { name: 'CRM', icon: '🤝', color: 'rgba(0,86,210,0.08)' },
           { name: 'Sales', icon: '📊', color: 'rgba(16,185,129,0.08)' },
@@ -245,7 +245,7 @@ const heroVisuals: Record<string, React.ReactNode> = {
         ))}
       </div>
       {/* Stats */}
-      <div style={{ background: 'var(--bg-dark)', borderRadius: 10, padding: '0.85rem 1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <div className="odoo-stats">
         {[{ label: 'Modules', val: '6+' }, { label: 'Users', val: 'Unlimited' }, { label: 'Version', val: 'v17' }].map((s, i) => (
           <div key={i} style={{ textAlign: 'center' }}>
             <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--primary)' }}>{s.val}</div>

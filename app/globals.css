@@ -271,12 +271,13 @@ footer { background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%); border-t
     width: 100%;
     height: calc(100vh - var(--header-height));
     background-color: var(--bg-dark);
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 5rem 2rem;
     gap: 2rem;
     align-items: flex-start;
     border-top: 1px solid var(--border);
     animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     z-index: 999;
+    overflow-y: auto;
   }
   @keyframes slideIn {
     from { transform: translateY(-20px); opacity: 0; }
@@ -305,4 +306,31 @@ footer { background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%); border-t
   .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .section-header { text-align: center; margin-left: auto; margin-right: auto; }
+}
+
+/* Odoo ERP Solutions Responsive Layout Fixes */
+.odoo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+.odoo-stats {
+  display: flex;
+  justify-content: space-between;
+  background: var(--bg-dark);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .odoo-grid {
+    grid-template-columns: 1fr;
+  }
+  .odoo-stats {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
 }
