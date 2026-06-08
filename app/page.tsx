@@ -44,7 +44,7 @@ export default function HomePage() {
         "address": { "@type": "PostalAddress", "streetAddress": "A-304, Times Square 2, Sindhu Bhavan Road, (SBR)", "addressLocality": "Ahmedabad", "addressRegion": "Gujarat", "postalCode": "380059", "addressCountry": "IN" },
         "geo": { "@type": "GeoCoordinates", "latitude": 23.0416, "longitude": 72.5075 },
         "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "19:00" },
-        "sameAs": ["https://www.facebook.com/share/1EAEBGsma8/?mibextid=wwXIfr","https://www.instagram.com/rbtechsphere?igsh=bWgxY3JjZmY2eWdv","https://www.linkedin.com/in/rbtechsphere"]
+        "sameAs": ["https://www.facebook.com/share/1EAEBGsma8/?mibextid=wwXIfr","https://www.instagram.com/rbtechsphere?igsh=bWgxY3JjZmY2eWdv","https://www.linkedin.com/company/rb-techsphere"]
       })}} />
 
       {/* HERO */}
