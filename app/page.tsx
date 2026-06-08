@@ -48,7 +48,7 @@ export default function HomePage() {
       })}} />
 
       {/* HERO */}
-      <section className="section hero-section" style={{ paddingTop: '7.5rem', background: 'linear-gradient(180deg, #EBF3FF 0%, #F3F6FA 100%)' }}>
+      <section className="section hero-section" style={{ paddingTop: '7.5rem', background: 'var(--bg-gradient-hero)' }}>
         <div className="bg-grid" />
         <div className="glow-blob glow-blob-primary" />
         <div className="glow-blob glow-blob-cyan" />
@@ -72,7 +72,7 @@ export default function HomePage() {
       </section>
 
       {/* VALUE PROPS */}
-      <section className="section" style={{ padding: '4rem 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'linear-gradient(90deg, rgba(0,86,210,0.02) 0%, rgba(255,84,33,0.02) 100%)' }}>
+      <section className="section" style={{ padding: '4rem 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'linear-gradient(90deg, rgba(var(--primary-rgb), 0.03) 0%, rgba(var(--secondary-rgb), 0.03) 100%)' }}>
         <div className="container grid-4" style={{ textAlign: 'center' }}>
           {valueProps.map((vp, i) => (
             <Reveal key={i} delay={i > 0 ? `delay-${i}` : ''}>
@@ -85,7 +85,7 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section className="section" style={{ background: 'linear-gradient(180deg, #F3F6FA 0%, #E9EDF5 100%)' }}>
+      <section className="section" style={{ background: 'var(--bg-gradient-1)' }}>
         <div className="container">
           <Reveal><div className="section-header"><h2 className="section-title">Comprehensive IT <span>Solutions</span></h2><p className="section-desc">We combine technological expertise and strategic thinking to build custom applications that solve real-world problems.</p></div></Reveal>
           <div className="grid-3">
@@ -95,7 +95,7 @@ export default function HomePage() {
       </section>
 
       {/* WHY US */}
-      <section className="section" style={{ background: 'linear-gradient(180deg, #E9EDF5 0%, #DFE5F2 100%)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+      <section className="section" style={{ background: 'var(--bg-gradient-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="container grid-2">
           <Reveal>
             <h2 className="section-title">Built for Scalability, Styled for <span>Impact</span></h2>
@@ -126,7 +126,7 @@ export default function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="section" style={{ background: 'linear-gradient(180deg, #F3F6FA 0%, #E9EDF5 100%)' }}>
+      <section className="section" style={{ background: 'var(--bg-gradient-1)' }}>
         <div className="container">
           <Reveal><div className="section-header" style={{ margin: '0 auto 4rem', textAlign: 'center' }}><h2 className="section-title">Endorsed by Tech <span>Leaders</span></h2><p className="section-desc">See how we help startups and enterprises automate systems and scale operations.</p></div></Reveal>
           <div className="grid-3">
@@ -149,7 +149,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="section" style={{ background: 'linear-gradient(180deg, #E9EDF5 0%, #DFE5F2 100%)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+      <section className="section" style={{ background: 'var(--bg-gradient-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="container">
           <Reveal><div className="section-header" style={{ margin: '0 auto 4rem', textAlign: 'center' }}><h2 className="section-title">Frequently Asked <span>Questions</span></h2><p className="section-desc">Common questions business owners ask when initiating projects with our IT agency.</p></div></Reveal>
           <FaqAccordion />
@@ -157,7 +157,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="section" style={{ padding: '6rem 0', background: 'linear-gradient(180deg, #F3F6FA 0%, #E9EDF5 100%)' }}>
+      <section className="section" style={{ padding: '6rem 0', background: 'var(--bg-gradient-1)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: 800, position: 'relative', zIndex: 2 }}>
           <h2 style={{ fontSize: 'clamp(2rem,4vw,2.8rem)', fontWeight: 800, marginBottom: '1.2rem' }}>Ready to Automate Your Business <span>Operations</span>?</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', color: 'var(--text-muted)' }}>Schedule a free 30-minute system architecture session with our engineering consultants to plan your digital path.</p>

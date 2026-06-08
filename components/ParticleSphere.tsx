@@ -15,14 +15,17 @@ export default function ParticleSphere() {
     let animId: number;
     const dpr = window.devicePixelRatio || 1;
 
+    let width = 0;
+    let height = 0;
+
     const resize = () => {
       const parent = canvas.parentElement!;
-      const w = parent.offsetWidth;
-      const h = parent.offsetHeight;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      canvas.style.width = `${w}px`;
-      canvas.style.height = `${h}px`;
+      width = parent.offsetWidth;
+      height = parent.offsetHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
       ctx.scale(dpr, dpr);
     };
     resize();
@@ -48,8 +51,6 @@ export default function ParticleSphere() {
 
     let rotX = 0.002, rotY = 0.003;
     let targetRotX = 0.002, targetRotY = 0.003;
-    let width = canvas.parentElement!.offsetWidth;
-    let height = canvas.parentElement!.offsetHeight;
 
     const onMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -63,8 +64,6 @@ export default function ParticleSphere() {
     canvas.addEventListener('mouseleave', onMouseLeave);
 
     const draw = () => {
-      width = canvas.parentElement!.offsetWidth;
-      height = canvas.parentElement!.offsetHeight;
       ctx.clearRect(0, 0, width, height);
       rotX += (targetRotX - rotX) * 0.1;
       rotY += (targetRotY - rotY) * 0.1;
@@ -88,7 +87,7 @@ export default function ParticleSphere() {
           const dx = nodes[i].x - nodes[j].x;
           const dy = nodes[i].y - nodes[j].y;
           const dz = nodes[i].z - nodes[j].z;
-          if (Math.sqrt(dx*dx + dy*dy + dz*dz) < 55) {
+          if (dx*dx + dy*dy + dz*dz < 3025) {
             const avgZ = (projected[i].z + projected[j].z) / 2;
             const alpha = (1 - (avgZ + radius) / (2 * radius)) * 0.15;
             ctx.strokeStyle = `rgba(0,86,210,${alpha})`;

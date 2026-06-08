@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,12 +25,17 @@
   --radius-md: 14px;
   --radius-lg: 24px;
   --radius-full: 9999px;
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Inter', sans-serif;
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.2s ease;
   --container-max: 1200px;
   --header-height: 80px;
+
+  /* Theme Gradients */
+  --bg-gradient-hero: linear-gradient(180deg, #EBF3FF 0%, #F3F6FA 100%);
+  --bg-gradient-1: linear-gradient(180deg, #F3F6FA 0%, #E9EDF5 100%);
+  --bg-gradient-1-rev: linear-gradient(180deg, #E9EDF5 0%, #F3F6FA 100%);
+  --bg-gradient-2: linear-gradient(180deg, #E9EDF5 0%, #DFE5F2 100%);
+  --bg-gradient-3: linear-gradient(180deg, #DFE5F2 0%, #E9EDF5 100%);
 }
 
 .dark {
@@ -48,6 +51,13 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+  /* Theme Gradients */
+  --bg-gradient-hero: linear-gradient(180deg, #0F172A 0%, #0B0F19 100%);
+  --bg-gradient-1: linear-gradient(180deg, #0B0F19 0%, #111827 100%);
+  --bg-gradient-1-rev: linear-gradient(180deg, #111827 0%, #0B0F19 100%);
+  --bg-gradient-2: linear-gradient(180deg, #111827 0%, #1E293B 100%);
+  --bg-gradient-3: linear-gradient(180deg, #1E293B 0%, #111827 100%);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -207,15 +217,11 @@ footer { background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F6 100%); border-t
 /* CONTACT FORM */
 .form-group { margin-bottom: 0.85rem; display: flex; flex-direction: column; gap: 6px; }
 .form-group label { font-size: 13.5px; font-weight: 600; color: var(--text-main); font-family: var(--font-heading); }
-.form-group input, .form-group select, .form-group textarea { padding: 10px 12px; background: rgba(15,23,42,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-main); font-family: var(--font-body); font-size: 14.5px; outline: none; transition: var(--transition-fast); width: 100%; }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); background: var(--bg-card); box-shadow: 0 4px 15px rgba(0,86,210,0.06); }
-.form-group select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg fill='%230e1b4d' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>"); background-repeat: no-repeat; background-position: right 12px center; background-size: 20px; padding-right: 36px !important; cursor: pointer; background-color: var(--bg-card); }
-.dark .form-group select { background-image: url("data:image/svg+xml;utf8,<svg fill='%23f8fafc' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>"); }
-.form-group select option { background-color: var(--bg-card); color: var(--text-main); }
+.form-group input, .form-group select, .form-group textarea { padding: 10px 12px; background: rgba(15,23,42,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-main); font-family: var(--font-body); font-size: 16px; outline: none; transition: var(--transition-fast); width: 100%; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); background-color: var(--bg-card); box-shadow: 0 4px 15px rgba(0,86,210,0.06); }
+.form-group select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%230e1b4d%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 20px; padding-right: 36px !important; cursor: pointer; background-color: var(--bg-card); }
+.dark .form-group select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23f8fafc%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E"); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-
-/* HERO DARK OVERRIDES */
-.dark .hero-section, .dark section[style*="background: linear-gradient"] { background: var(--bg-dark) !important; }
 
 /* PROCESS TIMELINE */
 .process-timeline { position: relative; display: flex; flex-direction: column; gap: 4rem; }

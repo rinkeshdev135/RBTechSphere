@@ -109,7 +109,7 @@ const heroVisuals: Record<string, React.ReactNode> = {
       <div style={{ width: 200, background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 32, padding: '1.25rem', boxShadow: '0 20px 60px rgba(14,27,77,0.08)' }}>
         <div style={{ width: 50, height: 5, background: 'var(--border)', borderRadius: 3, margin: '0 auto 1.25rem' }} />
         <div style={{ background: 'linear-gradient(135deg,var(--primary),var(--accent-cyan))', borderRadius: 14, padding: '0.85rem', color: '#fff', marginBottom: '0.85rem' }}>
-          <div style={{ fontSize: 11, opacity: 0.8, marginBottom: 4 }}>Today's Revenue</div>
+          <div style={{ fontSize: 11, opacity: 0.8, marginBottom: 4 }}>Today&apos;s Revenue</div>
           <div style={{ fontSize: 20, fontWeight: 800 }}>₹84,290</div>
         </div>
         {[{ k: 'Orders', v: '234' }, { k: 'Users', v: '1.2k' }, { k: 'Rating', v: '★ 4.9' }].map((r, i) => (
@@ -365,7 +365,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       <div className="glow-blob glow-blob-primary" style={{ position: 'fixed' }} />
 
       {/* HERO */}
-      <section className="section hero-section" style={{ paddingTop: '7.5rem', paddingBottom: '4rem', background: 'linear-gradient(180deg, #EBF3FF 0%, #F3F6FA 100%)' }}>
+      <section className="section hero-section" style={{ paddingTop: '7.5rem', paddingBottom: '4rem', background: 'var(--bg-gradient-hero)' }}>
         <div className="container grid-2">
           <Reveal>
             <h1 style={{ fontSize: 'clamp(2.3rem,5vw,3.5rem)', marginBottom: '1.5rem', fontWeight: 800 }}>
@@ -384,7 +384,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       </section>
 
       {/* FEATURES */}
-      <section className="section" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'linear-gradient(180deg, #F3F6FA 0%, #E9EDF5 100%)' }}>
+      <section className="section" style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'var(--bg-gradient-1)' }}>
         <div className="container">
           <Reveal>
             <div className="section-header" style={{ margin: '0 auto 4rem', textAlign: 'center' }}>
@@ -411,7 +411,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       </section>
 
       {/* TOOLKIT */}
-      <section className="section" style={{ background: 'linear-gradient(180deg, #E9EDF5 0%, #F3F6FA 100%)' }}>
+      <section className="section" style={{ background: 'var(--bg-gradient-1-rev)' }}>
         <div className="container" style={{ maxWidth: 800, textAlign: 'center' }}>
           <Reveal style={{ marginBottom: '3rem' }}>
             <h2 className="section-title" style={{ fontSize: '2.2rem' }}>Our <span>Toolkit</span></h2>
@@ -426,7 +426,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       </section>
 
       {/* CTA */}
-      <section className="section" style={{ padding: '5rem 0', background: 'linear-gradient(180deg, #F3F6FA 0%, #E9EDF5 100%)' }}>
+      <section className="section" style={{ padding: '5rem 0', background: 'var(--bg-gradient-1)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: 800 }}>
           <h2 style={{ fontSize: 'clamp(1.8rem,4vw,2.5rem)', fontWeight: 800, marginBottom: '1rem' }}>
             {service.ctaTitle}

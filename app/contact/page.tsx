@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Reveal from '@/components/Reveal';
 import ContactForm from '@/components/ContactForm';
 import FaqAccordion from '@/components/FaqAccordion';
@@ -24,7 +23,7 @@ export default function ContactPage() {
       <div className="glow-blob glow-blob-cyan" style={{ position: 'fixed' }} />
 
       {/* HERO */}
-      <section className="section hero-section" style={{ paddingTop: '7.5rem', paddingBottom: '5rem', background: 'linear-gradient(180deg, #EBF3FF 0%, #F3F6FA 100%)' }}>
+      <section className="section hero-section" style={{ paddingTop: '7.5rem', paddingBottom: '5rem', background: 'var(--bg-gradient-hero)' }}>
         <div className="container">
           <Reveal style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
             <h1 style={{ fontSize: 'clamp(2.5rem,5vw,3.8rem)', marginBottom: '1.5rem', fontWeight: 800 }}>
@@ -38,7 +37,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONTACT GRID */}
-      <section className="section" style={{ padding: '2rem 0 3.5rem 0', background: 'linear-gradient(180deg, #F3F6FA 0%, #E9EDF5 100%)' }}>
+      <section className="section" style={{ padding: '2rem 0 3.5rem 0', background: 'var(--bg-gradient-1)' }}>
         <div className="container grid-2">
           <Reveal>
             <h2 style={{ marginBottom: '1.25rem', fontSize: '2.2rem', fontWeight: 800 }}>Get in <span>Touch</span></h2>
@@ -64,7 +63,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section" style={{ background: 'linear-gradient(180deg, #E9EDF5 0%, #DFE5F2 100%)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+      <section className="section" style={{ background: 'var(--bg-gradient-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="container">
           <Reveal><div className="section-header" style={{ margin: '0 auto 4rem', textAlign: 'center' }}><h2 className="section-title">Frequently Asked <span>Questions</span></h2><p className="section-desc">Common questions business owners ask when initiating projects with our Ahmedabad IT agency.</p></div></Reveal>
           <FaqAccordion />

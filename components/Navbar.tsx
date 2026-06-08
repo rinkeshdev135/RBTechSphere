@@ -13,13 +13,22 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  useEffect(() => { setMobileOpen(false); setServicesOpen(false); }, [pathname]);
+
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setMobileOpen(false);
+    setServicesOpen(false);
+  }
 
   const subServices = [
     { href: '/services/custom-website-development',  label: 'Website Development',    icon: '🌐' },
@@ -121,7 +130,7 @@ export default function Navbar() {
       <header className={scrolled ? 'scrolled' : ''}>
         <div className="container nav-container">
           <Link href="/" className="logo-wrapper">
-            <Image src="/logo.png" alt="RB TechSphere Logo" width={56} height={56} className="logo-image" />
+            <Image src="/logo.png" alt="RB TechSphere Logo" width={56} height={56} className="logo-image" priority />
             <span className="logo-text">RB <span>TechSphere</span></span>
           </Link>
 

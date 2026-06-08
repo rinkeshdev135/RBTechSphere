@@ -25,7 +25,7 @@ export default function ServicesPage() {
       <div className="glow-blob glow-blob-primary" style={{ position: 'fixed' }} />
 
       {/* HERO */}
-      <section className="section hero-section" style={{ paddingTop: '7.5rem', paddingBottom: '2rem', background: 'linear-gradient(180deg, #EBF3FF 0%, #F3F6FA 100%)' }}>
+      <section className="section hero-section" style={{ paddingTop: '7.5rem', paddingBottom: '2rem', background: 'var(--bg-gradient-hero)' }}>
         <div className="container">
           <Reveal style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
             <h1 style={{ fontSize: 'clamp(2.5rem,5vw,3.8rem)', marginBottom: '1.5rem', fontWeight: 800 }}>
@@ -39,7 +39,7 @@ export default function ServicesPage() {
       </section>
 
       {/* SERVICES GRID */}
-      <section className="section" style={{ padding: '3rem 0 6rem 0', background: 'linear-gradient(180deg, #F3F6FA 0%, #E9EDF5 100%)' }}>
+      <section className="section" style={{ padding: '3rem 0 6rem 0', background: 'var(--bg-gradient-1)' }}>
         <div className="container">
           <div className="grid-3">
             {services.map((s, i) => <ServiceCard key={i} icon={s.icon} title={s.title} description={s.description} href={s.href} delay={s.delay} />)}
@@ -48,7 +48,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="section" style={{ padding: '6rem 0', background: 'linear-gradient(180deg, #E9EDF5 0%, #DFE5F2 100%)' }}>
+      <section className="section" style={{ padding: '6rem 0', background: 'var(--bg-gradient-2)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: 800 }}>
           <h2 style={{ fontSize: 'clamp(2rem,4vw,2.8rem)', fontWeight: 800, marginBottom: '1.2rem' }}>Not Sure Where to <span>Start</span>?</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', color: 'var(--text-muted)' }}>Book a free consultation and let our engineers assess what your project needs.</p>

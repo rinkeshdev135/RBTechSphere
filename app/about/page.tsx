@@ -22,7 +22,7 @@ export default function AboutPage() {
       <div className="glow-blob glow-blob-cyan" style={{ position: 'fixed' }} />
 
       {/* HERO */}
-      <section className="section hero-section" style={{ paddingTop: '7.5rem', paddingBottom: '5rem', background: 'linear-gradient(180deg, #EBF3FF 0%, #F3F6FA 100%)' }}>
+      <section className="section hero-section" style={{ paddingTop: '7.5rem', paddingBottom: '5rem', background: 'var(--bg-gradient-hero)' }}>
         <div className="container">
           <Reveal style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
             <h1 style={{ fontSize: 'clamp(2.5rem,5vw,3.8rem)', marginBottom: '1.5rem', fontWeight: 800 }}>
@@ -36,7 +36,7 @@ export default function AboutPage() {
       </section>
 
       {/* STORY & VALUES */}
-      <section className="section" style={{ paddingTop: '2rem', background: 'linear-gradient(180deg, #F3F6FA 0%, #E9EDF5 100%)' }}>
+      <section className="section" style={{ paddingTop: '2rem', background: 'var(--bg-gradient-1)' }}>
         <div className="container grid-2">
           <Reveal>
             <h2 style={{ marginBottom: '1.5rem', fontSize: '2.2rem', fontWeight: 800 }}>
@@ -71,7 +71,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="section" style={{ padding: '6rem 0', background: 'linear-gradient(180deg, #DFE5F2 0%, #E9EDF5 100%)' }}>
+      <section className="section" style={{ padding: '6rem 0', background: 'var(--bg-gradient-3)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: 800 }}>
           <h2 style={{ fontSize: 'clamp(2rem,4vw,2.8rem)', fontWeight: 800, marginBottom: '1.2rem' }}>
             Partner With Ahmedabad&apos;s <span>Top</span> IT Professionals
